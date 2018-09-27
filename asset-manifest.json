@@ -1,9 +1,15 @@
 {
-  "main.css": "static/css/main.2d3d7113.css",
-  "main.css.map": "static/css/main.2d3d7113.css.map",
-  "main.js": "static/js/main.02fcc21a.js",
-  "main.js.map": "static/js/main.02fcc21a.js.map",
+  "main.css": "static/css/main.64b7e617.css",
+  "main.css.map": "static/css/main.64b7e617.css.map",
+  "main.js": "static/js/main.efc400d0.js",
+  "main.js.map": "static/js/main.efc400d0.js.map",
+  "static\\media\\business-time-solid.svg": "static/media/business-time-solid.0e3b0563.svg",
+  "static\\media\\envelope-solid.svg": "static/media/envelope-solid.980a2426.svg",
   "static\\media\\home.jpg": "static/media/home.f51e0a4c.jpg",
   "static\\media\\logoHG.png": "static/media/logoHG.3923be52.png",
-  "static\\media\\logoUse.png": "static/media/logoUse.98a14115.png"
+  "static\\media\\logoUse.png": "static/media/logoUse.98a14115.png",
+  "static\\media\\map-marker-alt-solid.svg": "static/media/map-marker-alt-solid.491df7ac.svg",
+  "static\\media\\persan.jpeg": "static/media/persan.e18606aa.jpeg",
+  "static\\media\\phone-solid.svg": "static/media/phone-solid.61c7aeac.svg",
+  "static\\media\\v3b.png": "static/media/v3b.7cf336a9.png"
 }
