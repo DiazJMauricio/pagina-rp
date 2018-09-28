@@ -1,4 +1,4 @@
-:root{
+:root {
   --colorBase: #29457a;
   --colorBaseDark: #1c3461;
   --colorBaseLight: #304f8a;
@@ -18,61 +18,61 @@ body {
   overflow-x: hidden;
   background-color: var(--background-color);
 }
-.col-0{
+.col-0 {
   margin: 0px 100px;
   width: calc(100% - 200px);
 }
-.col-2{
+.col-2 {
   width: 50%;
   float: left;
   position: relative;
 }
-.w-f{
+.w-f {
   width: 100%;
 }
-.flex{
+.flex {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.content-consulta{
+.content-consulta {
   text-align: left;
-  
 }
-.content-form-consulta{
-  background-color: var( --content-consulta-color);
+.content-form-consulta {
+  background-color: var(--content-consulta-color);
   padding: 20px;
   height: calc(100% - 40px);
 }
-.content-consulta input, .content-consulta textarea{
+.content-consulta input,
+.content-consulta textarea {
   padding: 10px;
   border: 0px;
   border-radius: var(--border-radius);
   font-family: var(--font-family);
 }
-.content-consulta textarea{
+.content-consulta textarea {
   resize: none;
-  
 }
-.content-consulta h3{
+.content-consulta h3 {
   margin: 10px 0px;
 }
-.inp, textarea{
+.inp,
+textarea {
   margin: 10px 0px;
   width: calc(100% - 20px);
 }
-.title{
+.title {
   text-align: center;
   padding-top: 40px;
-  border-bottom:var(--box-shadow) solid 5px;
+  border-bottom: var(--box-shadow) solid 5px;
   margin-bottom: 20px;
   color: var(--color-title);
 }
-.title h2{
+.title h2 {
   margin: 5px;
 }
-.btn{
+.btn {
   margin: 0px 10%;
   width: calc(80%);
   color: white;
@@ -83,86 +83,88 @@ body {
   box-shadow: 0px 5px var(--colorBaseDark);
   will-change: backgroundcolor, box-shadow, transform;
 }
-.btn:hover{
+.btn:hover {
   background-color: var(--colorBaseLight);
   box-shadow: 0px 10px var(--colorBaseDark);
   transform: translateY(-5px);
 }
-.btn:active{
+.btn:active {
   box-shadow: 0px 0px var(--colorBaseDark);
   transform: translateY(5px);
 }
-#info{
+#info {
   display: inline-block;
   background-color: #fff;
 }
-.infocontacto{
+.infocontacto {
   text-align: left;
   padding: 20px 20px;
 }
-.infocontacto .inf{
+.infocontacto .inf {
   margin: 0px 0px 15px;
 }
-.infocontacto p{
+.infocontacto p {
   padding: 0px;
   margin: 5px 0px;
-  color: rgb(68, 68, 68)
+  color: rgb(68, 68, 68);
 }
-.infocontacto .infT{
+.infocontacto .infT {
   color: var(--colorBase);
   font-weight: bold;
 }
-.infocontacto img{
+.infocontacto img {
   float: left;
-  width: 40px;
-  height: 40px;
-  background-color: black;
+  width: 30px;
+  height: 30px;
 }
-.infocontacto .infText{
+.infocontacto .infText {
   margin-left: 50px;
   display: block;
 }
-footer{
+footer {
   background-color: var(--colorBase);
   padding: 20px 0px;
   text-align: left;
 }
 
 /*****************************************************/
-.baner{
+.baner {
   position: relative;
   margin-top: var(--main-margin);
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   justify-content: space-between;
-  
+}
+.baner:nth-child(2n) {
+  flex-direction: row;
 }
 
-.sub-baner{
+.sub-baner {
   display: flex;
+  position: relative;
+  overflow-y: hidden;
   align-items: center;
   justify-content: space-around;
   background-color: #fff;
   border: solid #fff 40px;
-  width: calc(50% - 80px - var(--main-margin)/2);
-  box-shadow: 0px 5px 0px var(--box-shadow) ;
+  width: calc(50% - 80px - var(--main-margin) / 2);
+  box-shadow: 0px 5px 0px var(--box-shadow);
   border-radius: var(--border-radius);
 }
-.baner-img{
-  background-image: url("./img/home.jpg");
-  background-position: center; 
-  background-repeat: no-repeat; 
-  background-size: cover; 
+
+.sub-baner img {
+  width: 100%;
+  position: absolute;
 }
 /***********************************************************/
-.cartel-marco{
+.cartel-marco {
   margin-top: var(--main-margin);
   margin-bottom: var(--main-margin);
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.cartel{
+.cartel {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -171,102 +173,104 @@ footer{
   padding: 0px 20px;
   width: calc(100% - 400px);
   border-radius: var(--border-radius);
-  box-shadow: 0px 5px 0px var(--box-shadow) ;
+  box-shadow: 0px 5px 0px var(--box-shadow);
 }
-.cartel-imagenes{
+.cartel-imagenes {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
   max-width: 220px;
 }
-.cartel-imagenes img{
+.cartel-imagenes img {
   width: 60px;
   height: 60px;
+  transition: transform 300ms;
+}
+.cartel-imagenes img:hover {
+  transform: scale(1.8);
 }
 /**************************************************/
-.info-sections{
+.info-sections {
   display: inline-flex;
   background-color: #fff;
   flex-direction: row;
 }
 /*Footer***********************************/
-  footer{
-    padding-right: 20px;
-    text-align: right
-  }
-  footer p{
-    margin: 0px 0px .5em 0px;
-    color: var(--background-color);
-  }
+footer {
+  padding-right: 20px;
+  text-align: right;
+}
+footer p {
+  margin: 0px 0px 0.5em 0px;
+  color: var(--background-color);
+}
 
-  footer a{
-    margin: .5em 0px 0px 0px;
-    color: var(--background-color);
-  }
+footer a {
+  margin: 0.5em 0px 0px 0px;
+  color: var(--background-color);
+}
 /***/
 
-@media only screen and (max-width: 1024px){
-  .col-0{
+@media only screen and (max-width: 1024px) {
+  .col-0 {
     margin: 0px;
     width: calc(100%);
   }
-  .title{
+  .title {
     margin-bottom: var(--main-margin);
   }
 
-  .cartel{
+  .cartel {
     width: calc(100% - 200px);
   }
 }
-@media only screen and (max-width: 768px){
-  .col-0{
+@media only screen and (max-width: 768px) {
+  .col-0 {
     margin: 0px 50px;
     width: calc(100% - 100px);
   }
-  .col-2{
+  .col-2 {
     margin: 0px;
     width: calc(100%);
   }
   /*BANER      *********************************************/
-  .baner{
+  .baner {
     flex-direction: column-reverse;
   }
-  .baner.b2{
-    flex-direction: column;
+  .baner:nth-child(2n) {
+    flex-direction: column-reverse;
   }
-  .sub-baner{
-    width: calc(100% - 80px);
-  }
-  .baner-img{
+  .sub-baner:last-child {
     height: 25vh;
     border-bottom: 0px;
     box-shadow: none;
   }
+  .sub-baner {
+    width: calc(100% - 80px);
+  }
   /*BANER END   *************************************************/
 
-  .cartel{
+  .cartel {
     width: calc(100% - 40px);
   }
 
   /*****/
-  .info-sections{
+  .info-sections {
     margin-top: var(--main-margin);
     flex-direction: column;
   }
-
-
 }
 
-@media only screen and (max-width: 512px){
-  .col-0{
+@media only screen and (max-width: 512px) {
+  .col-0 {
     margin: 0px;
     width: calc(100%);
   }
-  .cartel{
+  .cartel {
     width: calc(100% - 40px);
   }
-  .title{
+  .title {
     margin-bottom: var(--main-margin);
   }
 }
