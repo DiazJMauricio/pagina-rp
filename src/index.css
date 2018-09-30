@@ -36,32 +36,6 @@ body {
   align-items: center;
 }
 
-.content-consulta {
-  text-align: left;
-}
-.content-form-consulta {
-  background-color: var(--content-consulta-color);
-  padding: 20px;
-  height: calc(100% - 40px);
-}
-.content-consulta input,
-.content-consulta textarea {
-  padding: 10px;
-  border: 0px;
-  border-radius: var(--border-radius);
-  font-family: var(--font-family);
-}
-.content-consulta textarea {
-  resize: none;
-}
-.content-consulta h3 {
-  margin: 10px 0px;
-}
-.inp,
-textarea {
-  margin: 10px 0px;
-  width: calc(100% - 20px);
-}
 .title {
   text-align: center;
   padding-top: 40px;
@@ -92,45 +66,12 @@ textarea {
   box-shadow: 0px 0px var(--colorBaseDark);
   transform: translateY(5px);
 }
-#info {
-  display: inline-block;
-  background-color: #fff;
-}
-.infocontacto {
-  text-align: left;
-  padding: 20px 20px;
-}
-.infocontacto .inf {
-  margin: 0px 0px 15px;
-}
-.infocontacto p {
-  padding: 0px;
-  margin: 5px 0px;
-  color: rgb(68, 68, 68);
-}
-.infocontacto .infT {
-  color: var(--colorBase);
-  font-weight: bold;
-}
-.infocontacto img {
-  float: left;
-  width: 30px;
-  height: 30px;
-}
-.infocontacto .infText {
-  margin-left: 50px;
-  display: block;
-}
-footer {
-  background-color: var(--colorBase);
-  padding: 20px 0px;
-  text-align: left;
-}
 
 /*****************************************************/
 .baner {
   position: relative;
   margin-top: var(--main-margin);
+  margin-bottom: 80px;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
@@ -197,19 +138,7 @@ footer {
   flex-direction: row;
 }
 /*Footer***********************************/
-footer {
-  padding-right: 20px;
-  text-align: right;
-}
-footer p {
-  margin: 0px 0px 0.5em 0px;
-  color: var(--background-color);
-}
 
-footer a {
-  margin: 0.5em 0px 0px 0px;
-  color: var(--background-color);
-}
 /***/
 
 @media only screen and (max-width: 1024px) {

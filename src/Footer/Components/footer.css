@@ -1,0 +1,16 @@
+footer {
+  background-color: var(--colorBase);
+  padding: 20px 0px;
+  padding-right: 5px;
+  text-align: right;
+}
+
+footer p {
+  margin: 0px 0px 0.5em 0px;
+  color: var(--background-color);
+}
+
+footer a {
+  margin: 0.5em 0px 0px 0px;
+  color: var(--background-color);
+}

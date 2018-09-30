@@ -11,21 +11,25 @@ import imgHor from "../../img/business-time-solid.svg";
 
 const infoContacto = [
   {
+    key: 1,
     img: imgDir,
     title: "Dirección",
     text: "Pasaje J.M. Pueyrredon 142 BA°Cantisani - San Luis Capital - 5700"
   },
   {
+    key: 2,
     img: imgMail,
     title: "E-mail",
     text: "email@gmail.com"
   },
   {
+    key: 3,
     img: imgTel,
     title: "Telefono",
     text: "+54 9266 4446948"
   },
   {
+    key: 4,
     img: imgHor,
     title: "Horario de Atención",
     text: "Lunes a Viernes de 8hs a 17hs"

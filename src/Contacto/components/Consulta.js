@@ -1,4 +1,5 @@
 import React from "react";
+import "./Consulta.css";
 
 function Consulta() {
   return (

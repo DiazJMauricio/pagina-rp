@@ -12,12 +12,12 @@ const links = [
     id: "#servicios"
   },
   {
-    titulo: "Contacto",
-    id: "#contacto"
-  },
-  {
     titulo: "Turnos",
     id: "#turnos"
+  },
+  {
+    titulo: "Contacto",
+    id: "#contacto"
   }
 ];
 

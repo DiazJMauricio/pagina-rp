@@ -1,0 +1,29 @@
+#info {
+  display: inline-block;
+  background-color: #fff;
+}
+.infocontacto {
+  text-align: left;
+  padding: 20px 20px;
+}
+.infocontacto .inf {
+  margin: 0px 0px 15px;
+}
+.infocontacto p {
+  padding: 0px;
+  margin: 5px 0px;
+  color: rgb(68, 68, 68);
+}
+.infocontacto .infT {
+  color: var(--colorBase);
+  font-weight: bold;
+}
+.infocontacto img {
+  float: left;
+  width: 30px;
+  height: 30px;
+}
+.infocontacto .infText {
+  margin-left: 50px;
+  display: block;
+}

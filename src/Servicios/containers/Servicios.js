@@ -12,12 +12,14 @@ import imgR3 from "../../img/v3b.png";
 
 const baners = [
   {
+    key: 1,
     title: "Rectificamos Motores Diesel y Nafteros",
     text:
       " Con solo presionar un botón en el espejo retrovisor o en la aplicación, nuestra tecnología ofrece más seguridad y practicidad para tu día a día. Aprovechá esta nueva experiencia a bordo de tu Chevrolet.",
     img: img
   },
   {
+    key: 2,
     title: "Rectificamos Motores Diesel y Nafteros",
     text:
       "Con solo presionar un botón en el espejo retrovisor o en la aplicación, nuestra tecnología ofrece más seguridad y practicidad para tu día a día. Aprovechá esta nueva experiencia a bordo de tu Chevrolet.",
@@ -27,14 +29,17 @@ const baners = [
 
 const marcas = [
   {
+    key: 1,
     text: "Perfect Circle",
     img: imgR1
   },
   {
+    key: 2,
     text: "",
     img: imgR2
   },
   {
+    key: 3,
     text: "",
     img: imgR3
   }
@@ -48,7 +53,12 @@ class Servicios extends Component {
         <ServiciosLayout>
           {baners.map(baner => {
             return (
-              <Baner title={baner.title} text={baner.text} img={baner.img} />
+              <Baner
+                key={baner.key}
+                title={baner.title}
+                text={baner.text}
+                img={baner.img}
+              />
             );
           })}
           <Repuestos imgs={marcas} />

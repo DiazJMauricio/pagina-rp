@@ -1,0 +1,27 @@
+.content-consulta {
+  text-align: left;
+}
+.content-form-consulta {
+  background-color: var(--content-consulta-color);
+  padding: 20px;
+  height: calc(100% - 40px);
+}
+.content-consulta input,
+.content-consulta textarea {
+  padding: 10px;
+  border: 0px;
+  border-radius: var(--border-radius);
+  font-family: var(--font-family);
+}
+.content-consulta textarea {
+  resize: none;
+}
+.content-consulta h3 {
+  margin: 10px 0px;
+}
+
+.inp,
+textarea {
+  margin: 10px 0px;
+  width: calc(100% - 20px);
+}

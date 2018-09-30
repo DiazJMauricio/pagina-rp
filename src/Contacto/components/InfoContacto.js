@@ -1,11 +1,20 @@
 import React from "react";
 import InfoItem from "./InfoItem";
+import "./InfoContacto.css";
+
 function InfoContacto(props) {
   return (
     <section id="info" className="col-2">
       <div className="infocontacto">
         {props.info.map(inf => {
-          return <InfoItem title={inf.title} text={inf.text} img={inf.img} />;
+          return (
+            <InfoItem
+              key={inf.key}
+              title={inf.title}
+              text={inf.text}
+              img={inf.img}
+            />
+          );
         })}
       </div>
       <iframe

@@ -4,6 +4,7 @@ import NavBar from "./NavBar";
 import Servicios from "../Servicios/containers/Servicios";
 import Contacto from "../Contacto/containers/Contacto";
 import Footer from "../Footer/containers/Footer";
+import Turnos from "../Turnos/containers/turnos";
 
 class Page extends Component {
   render() {
@@ -12,6 +13,7 @@ class Page extends Component {
         <NavBar />
         <Home />
         <Servicios />
+        <Turnos />
         <Contacto />
         <Footer />
       </div>
