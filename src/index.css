@@ -19,13 +19,20 @@ body {
   background-color: var(--background-color);
 }
 .col-0 {
-  margin: 0px 100px;
-  width: calc(100% - 200px);
+  margin: 0px 200px;
+  width: calc(100% - 400px);
 }
 .col-2 {
   width: 50%;
   float: left;
   position: relative;
+}
+button:active {
+  outline: none;
+  border: none;
+}
+button:focus {
+  outline: 0;
 }
 .w-f {
   width: 100%;
@@ -140,6 +147,12 @@ body {
 /*Footer***********************************/
 
 /***/
+@media only screen and (max-width: 1200px) {
+  .col-0 {
+    margin: 0px 100px;
+    width: calc(100% - 200px);
+  }
+}
 
 @media only screen and (max-width: 1024px) {
   .col-0 {

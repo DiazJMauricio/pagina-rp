@@ -6,32 +6,39 @@ import Contacto from "../Contacto/containers/Contacto";
 import Footer from "../Footer/containers/Footer";
 import Turnos from "../Turnos/containers/turnos";
 import FormTurnos from "../FormTurno/containers/FormTurnos";
+import Modal from "../Modal/components/Modal";
+import ContainerModal from "../Modal/containers/containerModal";
 
 class Page extends Component {
   state = {
-    NavBarClass: "NavBar-container"
+    NavBarClass: "NavBar-container",
+    modalVisible: false
   };
-  showNavBar() {
-    console.log("aaa");
-    if (window.pageYOffset >= 1) {
-      this.setState({
-        NavBarClass: "NavBar-container show"
-      });
-    }
-  }
+  handleOpenModal = () => {
+    this.setState({
+      modalVisible: true
+    });
+  };
+  handleCloseClick = event => {
+    this.setState({
+      modalVisible: false
+    });
+  };
   render() {
     return (
-      <div className="Page" onScroll={this.showNavBar()}>
-        <NavBar
-          show={this.state.NavBarClass}
-          changeShow={this.showNavBar.bind(this)}
-        />
+      <div className="Page">
         <Home />
         <Servicios />
-        <Turnos />
-        <FormTurnos />
+        <Turnos handleButton={this.handleOpenModal} />
         <Contacto />
         <Footer />
+        {this.state.modalVisible && (
+          <ContainerModal>
+            <Modal handleCloseClick={this.handleCloseClick}>
+              <FormTurnos />
+            </Modal>
+          </ContainerModal>
+        )}
       </div>
     );
   }

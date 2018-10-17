@@ -1,0 +1,31 @@
+.FormTurnosLayout {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.FormTurnosLayout input {
+  padding: 5px;
+  margin: 10px;
+}
+.FormTurnosLayout label {
+  font-size: 0.7em;
+  padding: 0px 15px;
+  color: red;
+}
+.InputTime {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.InputTime input {
+  max-width: 40%;
+}
+input.error {
+  border: solid 2px red;
+}
+.FormTurnosLayout select {
+  height: 2.5em;
+  margin: 10px;
+  padding: 5px;
+  min-width: 100px;
+}
