@@ -10,7 +10,6 @@
 .FormTurnosLayout label {
   font-size: 0.7em;
   padding: 0px 15px;
-  color: red;
 }
 .InputTime {
   display: flex;
@@ -28,4 +27,20 @@ input.error {
   margin: 10px;
   padding: 5px;
   min-width: 100px;
+}
+
+.FormTurnosLayout h3,
+.FormTurnosLayout h4 {
+  padding: 0px;
+  margin: 5px;
+  text-align: center;
+}
+.FormTurnosLayout button {
+  min-width: 50%;
+}
+.formButtonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: var(--main-margin) 0px;
 }

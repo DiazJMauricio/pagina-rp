@@ -23,6 +23,8 @@
   margin: 0;
 }
 .close-btn {
+  padding: 0;
+  margin: 0;
   border: none;
   right: 100px;
   height: 1.6em;
@@ -35,6 +37,7 @@
   font-size: 1.5em;
   transform: rotate(45deg);
   transition: background-color 300ms;
+  box-shadow: none;
 }
 .close-btn:hover {
   background-color: rgb(182, 182, 182);

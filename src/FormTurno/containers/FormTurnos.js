@@ -7,7 +7,12 @@ class FormTurnos extends Component {
     console.log("Submit");
   };
   render() {
-    return <FormTurnosLayout handleSubmit={this.handleFormSubmit} />;
+    return (
+      <FormTurnosLayout
+        handleSubmit={this.handleFormSubmit}
+        addTurno={this.props.addTurno}
+      />
+    );
   }
 }
 export default FormTurnos;

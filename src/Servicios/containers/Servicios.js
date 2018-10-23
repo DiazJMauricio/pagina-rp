@@ -5,6 +5,8 @@ import Baner from "../components/Baner";
 import Repuestos from "../components/Repuestos";
 
 import img from "../../img/home.jpg";
+import pruebasHImg from "../../img/PruebasHidraulicas.jpg";
+import rectifiImg from "../../img/Rectificacion.jpg";
 
 import imgR1 from "../../img/pc.jpg";
 import imgR2 from "../../img/persan.jpeg";
@@ -16,14 +18,14 @@ const baners = [
     title: "Rectificamos Motores Diesel y Nafteros",
     text:
       " Con solo presionar un botón en el espejo retrovisor o en la aplicación, nuestra tecnología ofrece más seguridad y practicidad para tu día a día. Aprovechá esta nueva experiencia a bordo de tu Chevrolet.",
-    img: img
+    img: rectifiImg
   },
   {
     key: 2,
-    title: "Rectificamos Motores Diesel y Nafteros",
+    title: "Pruebas Hidraulicas",
     text:
       "Con solo presionar un botón en el espejo retrovisor o en la aplicación, nuestra tecnología ofrece más seguridad y practicidad para tu día a día. Aprovechá esta nueva experiencia a bordo de tu Chevrolet.",
-    img: img
+    img: pruebasHImg
   }
 ];
 
