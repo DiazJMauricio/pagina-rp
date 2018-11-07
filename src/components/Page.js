@@ -8,6 +8,9 @@ import Turnos from "../Turnos/containers/turnos";
 import FormTurnos from "../FormTurno/containers/FormTurnos";
 import Modal from "../Modal/components/Modal";
 import ContainerModal from "../Modal/containers/containerModal";
+import TurnosForm from "../TurnosForm/container/TurnosForm";
+
+import Api from "../api.json";
 
 import firebase from "firebase";
 import { DB_CONFIG } from "../config/config";
@@ -24,31 +27,7 @@ class Page extends Component {
   }
   state = {
     NavBarClass: "NavBar-container",
-    modalVisible: false,
-
-    turnos: [
-      {
-        nombre: "Juan Perez",
-        email: "jp@gmail.com",
-        asunto: "motor",
-        fecha: "2018-10-04",
-        hora: "16 hs"
-      },
-      {
-        nombre: "Juan Perez2",
-        email: "jp2@gmail.com",
-        asunto: "motor",
-        fecha: "2018-10-05",
-        hora: "17 hs"
-      },
-      {
-        nombre: "Juan Perez3",
-        email: "jp3@gmail.com",
-        asunto: "motor3",
-        fecha: "2018-10-06",
-        hora: "18 hs"
-      }
-    ]
+    modalVisible: false
   };
 
   handleOpenModal = () => {
@@ -61,15 +40,14 @@ class Page extends Component {
       modalVisible: false
     });
   };
+
   render() {
     return (
       <div className="Page">
         <Home />
         <Servicios />
-        <Turnos
-          handleButton={this.handleOpenModal}
-          turnos={this.state.turnos}
-        />
+
+        <Turnos handleButton={this.handleOpenModal} turnos={Api.turnos} />
         <Contacto />
         <Footer />
         {this.state.modalVisible && (
@@ -78,7 +56,7 @@ class Page extends Component {
               handleCloseClick={this.handleCloseClick}
               addTurno={this.addTurno}
             >
-              <FormTurnos />
+              <TurnosForm />
             </Modal>
           </ContainerModal>
         )}

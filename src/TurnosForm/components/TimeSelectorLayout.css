@@ -1,0 +1,45 @@
+.TimeSelector {
+  width: 90%;
+  margin: 5px 5%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.TimeSelector button {
+  border: none;
+}
+
+.TimeSelector button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24%;
+  height: 40px;
+  margin: 5px 1px;
+  border-radius: 5px;
+}
+.TimeSelector button:disabled {
+  background-color: rgb(218, 218, 218);
+  color: gray;
+}
+
+.ts-selected {
+  transition: all 3ms;
+  font-weight: 700;
+  box-shadow: rgb(17, 173, 77) 0px 5px;
+  transform: translateY(-5px);
+}
+.TimeSelector button:enabled.ts-selected {
+  background-color: rgb(44, 226, 99);
+}
+.TimeSelector button:enabled {
+  background-color: rgb(86, 202, 106);
+  cursor: pointer;
+  color: black;
+}
+.TimeSelector button:enabled:hover {
+  background-color: rgb(80, 219, 103);
+}
+
+.TimeSelector button:active {
+  border: none;
+}

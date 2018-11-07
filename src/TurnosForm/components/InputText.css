@@ -1,0 +1,13 @@
+form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+input {
+  padding: 1em;
+  margin: 0 15px 15px 15px;
+}
+.inputError {
+  border: solid 2px rgb(255, 0, 0);
+}

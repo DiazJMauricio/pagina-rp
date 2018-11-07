@@ -13,6 +13,10 @@
   padding: 10px;
   border-radius: 10px;
 }
+.ModalContent {
+  max-height: 90vh;
+  overflow: auto;
+}
 .ModalFunction {
   display: flex;
   flex-direction: row;

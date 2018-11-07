@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import "./FormTurnosLayout.css";
+import Calendar from "react-calendar";
+import "../../calendar.css";
+// import TimeSelector from "../../TimeSelector/container/TimeSelector";
 
 class FormTurnosLayout extends Component {
   constructor() {
@@ -7,16 +10,24 @@ class FormTurnosLayout extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   state = {
-    ErrorNombre: false
+    ErrorNombre: false,
+    date: new Date()
   };
   handleSubmit(event) {
     event.preventDefault();
-    if (this.InputNombreValue.value == "") {
+    if (this.InputNombreValue.value === "") {
       this.setState({
         ErrorNombre: true
       });
     }
+    if (this.InputEmailValue.value === "") {
+      this.setState({
+        ErrorEmail: true
+      });
+    }
   }
+  OnChange = date => this.setState({ date });
+  DayOnCalendarDisable = ({ date }) => date.getDay() === 0;
 
   render() {
     let InputNombre;
@@ -44,14 +55,19 @@ class FormTurnosLayout extends Component {
         />
       );
     }
-
-    return (
-      <form className="FormTurnosLayout" onSubmit={this.handleSubmit}>
-        <h3>Recuerda que nuestros horarios son:</h3>
-        <h4>De Lunes a Sabados de 8hs a 12hs y de 16hs a 20hs</h4>
-
-        {InputNombre}
-
+    if (this.state.ErrorEmail) {
+      InputEmail = (
+        <input
+          type="text"
+          className="TurnosInput error"
+          placeholder="E-mail"
+          ref={email => {
+            this.InputEmailValue = email;
+          }}
+        />
+      );
+    } else {
+      InputEmail = (
         <input
           type="text"
           className="TurnosInput"
@@ -60,42 +76,40 @@ class FormTurnosLayout extends Component {
             this.InputEmailValue = email;
           }}
         />
-        <input
-          type="text"
-          className="TurnosInput"
-          placeholder="Asunto"
-          ref={Asunto => {
-            this.InputAsuntoValue = Asunto;
-          }}
-        />
-        <div className="InputTime">
-          <input
-            type="date"
-            className="TurnosInput"
-            placeholder="Fecha"
-            ref={Fecha => {
-              this.InputFechaValue = Fecha;
-            }}
+      );
+    }
+
+    return (
+      <form className="FormTurnosLayout" onSubmit={this.handleSubmit}>
+        <h3>Recuerda que nuestros horarios son:</h3>
+        <h4>De Lunes a Sabados de 8hs a 12hs y de 16hs a 20hs</h4>
+        <div className="inputs">
+          <Calendar
+            calendarType="US"
+            onChange={this.onChange}
+            value={this.state.date}
+            minDate={this.state.date}
+            tileDisabled={this.DayOnCalendarDisable}
           />
-          <select
-            className="TurnosInput"
-            name="Hora"
-            ref={Hora => {
-              this.InputHoraValue = Hora;
-            }}
-          >
-            <option value="8">8 hs </option>
-            <option value="9">9 hs </option>
-            <option value="10">10 hs</option>
-            <option value="11">11 hs</option>
-            <option value="16">16 hs</option>
-            <option value="17">17 hs</option>
-            <option value="18">18 hs</option>
-            <option value="19">19 hs</option>
-          </select>
+
+          <div className="inputsText">
+            {InputNombre}
+            {InputEmail}
+            <input
+              type="text"
+              className="TurnosInput"
+              placeholder="Asunto"
+              ref={Asunto => {
+                this.InputAsuntoValue = Asunto;
+              }}
+            />
+            {/* <TimeSelector /> */}
+          </div>
         </div>
         <div className="formButtonContainer">
-          <button onClick={this.handleSubmit}>Pedir Turno</button>
+          <button onClick={this.handleSubmit} className="btn">
+            Pedir Turno
+          </button>
         </div>
       </form>
     );

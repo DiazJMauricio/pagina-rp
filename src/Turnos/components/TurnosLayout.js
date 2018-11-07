@@ -8,34 +8,19 @@ function TurnosLayout(props) {
     <div>
       <Divisor text="Turnos" id="turnos" />
       <div className="ContainerDias col-0">
-        <div className="DiaFila">
-          <div className="celdaHora" />
-          <h4 className="celdaHora"> 8 hs</h4>
-          <h4 className="celdaHora"> 9 hs</h4>
-          <h4 className="celdaHora">10 hs</h4>
-          <h4 className="celdaHora border-r">11 hs</h4>
-          <h4 className="celdaHora">16 hs</h4>
-          <h4 className="celdaHora">17 hs</h4>
-          <h4 className="celdaHora">18 hs</h4>
-          <h4 className="celdaHora">19 hs</h4>
-        </div>
-        <Dia dia="Lun 1/11" />
-        <Dia dia="Mar 2/11" />
-        <Dia dia="Mie 3/11" />
-        <Dia dia="Jue 4/11" />
-        <Dia dia="Vie 5/11" />
-        <Dia dia="Sab 6/11" />
         <div className="containerButton">
-          <button onClick={props.handleButton}>Pedir Turno</button>
+          <button onClick={props.handleButton} className="btn">
+            Pedir Turno
+          </button>
         </div>
         {props.turnos.map(turno => {
           return (
             <div>
-              <p>{turno.nombre}</p>
-              <p>{turno.email}</p>
-              <p>{turno.asunto}</p>
-              <p>{turno.fecha}</p>
-              <p>{turno.hora}</p>
+              <p key="1">{turno.nombre}</p>
+              <p key="2">{turno.email}</p>
+              <p key="3">{turno.asunto}</p>
+              <p key="4">{turno.fecha}</p>
+              <p key="5">{turno.hora}</p>
             </div>
           );
         })}
