@@ -36,7 +36,7 @@ const infoContacto = [
     img: imgHor,
     alt: "Horario",
     title: "Horario de Atención",
-    text: "Lunes a Viernes de 8hs a 17hs"
+    text: "Lunes a Sabados de 8hs a 12hs y de 16hs a 20hs"
   }
 ];
 

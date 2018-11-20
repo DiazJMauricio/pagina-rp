@@ -4,7 +4,6 @@ import ServiciosLayout from "../components/ServiciosLayout";
 import Baner from "../components/Baner";
 import Repuestos from "../components/Repuestos";
 
-import img from "../../img/home.jpg";
 import pruebasHImg from "../../img/PruebasHidraulicas.jpg";
 import rectifiImg from "../../img/Rectificacion.jpg";
 

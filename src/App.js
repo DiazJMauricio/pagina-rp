@@ -1,11 +1,19 @@
 import React from "react";
 import "./App.css";
 import Page from "./components/Page";
-import { HashRouter } from "react-router-dom";
+import Conf from "./components/confirmacion";
+import { HashRouter, Route } from "react-router-dom";
 // import ApiCalendar from "react-google-calendar-api";
 
 export default () => (
   <HashRouter>
-    <Page />
+    <div>
+      <Route exact path="/" component={Page} />
+      <Route exact path="/Servicios" component={Page} />
+      <Route exact path="/turnos" component={Page} />
+      <Route exact path="/contacto" component={Page} />
+      <Route path="/confirmacion/:id" component={Conf} />
+    </div>
+    {/* <Page /> */}
   </HashRouter>
 );

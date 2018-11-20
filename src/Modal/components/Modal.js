@@ -6,7 +6,7 @@ function Modal(props) {
     <div className="ModalCapa">
       <div className="ModalContainer col-2">
         <div className="ModalFunction">
-          <h2>Pedir Turno</h2>
+          <h2>{props.title}</h2>
           <button className="close-btn" onClick={props.handleCloseClick}>
             +
           </button>

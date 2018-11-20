@@ -5,39 +5,48 @@ import Servicios from "../Servicios/containers/Servicios";
 import Contacto from "../Contacto/containers/Contacto";
 import Footer from "../Footer/containers/Footer";
 import Turnos from "../Turnos/containers/turnos";
-import FormTurnos from "../FormTurno/containers/FormTurnos";
 import Modal from "../Modal/components/Modal";
+import Alert from "../widget/components/CartelConfirmacion";
 import ContainerModal from "../Modal/containers/containerModal";
 import TurnosForm from "../TurnosForm/container/TurnosForm";
-
-import Api from "../api.json";
-
-import firebase from "firebase";
-import { DB_CONFIG } from "../config/config";
-import "firebase/database";
 
 class Page extends Component {
   constructor() {
     super();
-    this.app = firebase.initializeApp(DB_CONFIG);
-    this.db = this.app
-      .database()
-      .ref()
-      .child("turnos");
   }
   state = {
     NavBarClass: "NavBar-container",
-    modalVisible: false
+    modalFormVisible: false,
+    modalAlertVisible: false,
+    Email: ""
   };
 
-  handleOpenModal = () => {
+  // Modal Form
+  handleOpenModalForm = () => {
     this.setState({
-      modalVisible: true
+      modalFormVisible: true
     });
   };
-  handleCloseClick = event => {
+  handleCloseClickForm = () => {
     this.setState({
-      modalVisible: false
+      modalFormVisible: false
+    });
+  };
+  handleCompleteModalForm = email => {
+    this.handleCloseClickForm();
+    this.setState({ Email: email });
+    this.handleOpenModalAlert();
+  };
+
+  // Modal Alert
+  handleOpenModalAlert = () => {
+    this.setState({
+      modalAlertVisible: true
+    });
+  };
+  handleCloseClickAlert = () => {
+    this.setState({
+      modalAlertVisible: false
     });
   };
 
@@ -47,16 +56,23 @@ class Page extends Component {
         <Home />
         <Servicios />
 
-        <Turnos handleButton={this.handleOpenModal} turnos={Api.turnos} />
+        <Turnos handleButton={this.handleOpenModalForm} />
         <Contacto />
         <Footer />
-        {this.state.modalVisible && (
+        {this.state.modalFormVisible && (
           <ContainerModal>
             <Modal
-              handleCloseClick={this.handleCloseClick}
-              addTurno={this.addTurno}
+              title="Solicitud de Turno"
+              handleCloseClick={this.handleCloseClickForm}
             >
-              <TurnosForm />
+              <TurnosForm handleCompleteClick={this.handleCompleteModalForm} />
+            </Modal>
+          </ContainerModal>
+        )}
+        {this.state.modalAlertVisible && (
+          <ContainerModal>
+            <Modal title="" handleCloseClick={this.handleCloseClickAlert}>
+              <Alert Email={this.state.Email} />
             </Modal>
           </ContainerModal>
         )}

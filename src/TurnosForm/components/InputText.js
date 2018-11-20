@@ -7,7 +7,7 @@ function InputText(props) {
   let NombreClass = "";
   let EMailClass = "";
   // console.log(EMailValid);
-  if (NombreValid == false) {
+  if (NombreValid === false) {
     NombreClass = "inputError";
   }
   if (EMailValid === null) {

@@ -15,7 +15,7 @@
   flex-direction: column;
 }
 .FormTurnosLayout input {
-  padding: 2px;
+  padding: 5px;
   margin: 10px;
 }
 .FormTurnosLayout label {
@@ -56,20 +56,35 @@ input.error {
   margin: var(--main-margin) 0px;
 }
 .formTitle b {
-  color: rgb(212, 0, 0);
-  font-size: 1em;
-  text-decoration: underline;
+  color: var(--colorBaseDark);
+  font-size: 1.2em;
+  /* text-decoration: underline; */
+  border-bottom: 3px solid var(--colorBaseDark);
 }
 .formTitle {
   width: 100%;
-  text-align: center;
+  display: block;
+  text-align: left;
   background-color: rgb(221, 221, 221);
   padding: 0.1em 0;
   border-radius: 5px;
   margin-bottom: 20px;
 }
+.formTitle p {
+  margin-left: 20px;
+}
+.formErrors {
+  width: 90%;
+  padding-left: 10%;
+  display: block;
+  text-align: left;
+  background-color: rgb(221, 221, 221);
+  border-radius: 5px;
+  color: var(--colorSecundario);
+}
 .fcol-1 {
   width: 100%;
+  display: inline-block;
 }
 .fcol-2 {
   width: 50%;
