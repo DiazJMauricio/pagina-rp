@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "emailjs-com": "^2.2.4",
     "firebase": "^5.5.5",
     "git": "^0.1.5",
     "git-init": "^1.0.0",

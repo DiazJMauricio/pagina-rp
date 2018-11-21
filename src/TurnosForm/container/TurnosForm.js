@@ -6,6 +6,7 @@ import "./TurnosForm.css";
 import TimeSelector from "../components/TimeSelector";
 import InputText from "../components/InputText";
 import FormErrors from "../components/FormErrors";
+import * as emailjs from "emailjs-com";
 
 import * as firebase from "firebase";
 
@@ -77,82 +78,158 @@ class TurnosForm extends PureComponent {
       NombreValid
     });
   };
+
   Validation = () => {
-    let errores = [];
-    this.InputTextValidation();
-    // Nombre
-    if (this.state.Nombre.length === 0) {
-      errores.push("Nombre obligatorio");
-    } else if (this.state.Nombre.length < 6) {
-      errores.push("El Nombre es demasiado corto");
-    } else if (this.state.Nombre.length > 35) {
-      errores.push("El nombre ingresado es demasiado Largo");
-    }
+    return new Promise((resolve, reject) => {
+      let errores = [];
+      this.InputTextValidation();
+      // Nombre
+      if (this.state.Nombre.length === 0) {
+        errores.push("Nombre obligatorio");
+      } else if (this.state.Nombre.length < 6) {
+        errores.push("El Nombre es demasiado corto");
+      } else if (this.state.Nombre.length > 35) {
+        errores.push("El nombre ingresado es demasiado Largo");
+      }
 
-    // Email
-    if (this.state.EMailValid === null || this.state.EMail.length === 0) {
-      errores.push("Ingrese una dirección de Email Válida.");
-    } else {
-      //////Email Usado
-      var firestore = firebase.firestore();
-      var mailUsado = false;
-      const docRef = firestore
-        .collection("Turnos")
-        .where("Email", "==", this.state.EMail);
-      // .where("Fecha", ">=", this.state.today);
-      docRef
-        .get()
-        .then(query => {
-          query.forEach(doc => {
-            mailUsado = true;
+      // Hora
+      if (this.state.hora === "") {
+        errores.push("Por favor seleccione una Hora Válida");
+        this.setState({ horaValid: false });
+      }
+
+      // Email
+      if (this.state.EMailValid === null || this.state.EMail.length === 0) {
+        errores.push("Ingrese una dirección de Email Válida.");
+      } else {
+        //////Email Usado
+        var firestore = firebase.firestore();
+        var mailUsado = false;
+        const docRef = firestore
+          .collection("Turnos")
+          .where("Email", "==", this.state.EMail);
+        docRef
+          .get()
+          .then(query => {
+            query.forEach(doc => {
+              console.log(doc.data().Fecha);
+              let d = new Date(doc.data().Fecha);
+              console.log(d);
+              if (d > this.state.today) {
+                mailUsado = true;
+              }
+            });
+            if (mailUsado) {
+              errores.push(
+                "Ya se registra un turno sin resolver con este correo, por favor revice su casilla de correo para Confirmar o Cancelar el turno"
+              );
+            }
+            this.setState({
+              ErrorForm: errores
+            });
+            resolve(errores.length === 0);
+          })
+          .catch(function(error) {
+            console.log("Error getting documents: ", error);
           });
-          if (mailUsado) {
-            errores.push(
-              "Ya se registra un turno sin resolver con este correo, por favor revice su casilla de correo para Confirmar o Cancelar el turno"
-            );
-          }
-        })
-        .catch(function(error) {
-          console.log("Error getting documents: ", error);
-        });
-      ///////////////
-    }
-
-    // Hora
-    if (this.state.hora === "") {
-      errores.push("Por favor seleccione una Hora Válida");
-      this.setState({ horaValid: false });
-    }
-    this.setState({
-      ErrorForm: errores
+      }
     });
-    return errores.length === 0;
   };
   Emailcontrol = () => {};
 
   handleSubmit = () => {
-    if (this.Validation()) {
-      var firestore = firebase.firestore();
-      const docRef = firestore.collection("Turnos");
-      docRef.doc().set({
-        Cliente: this.state.Nombre,
-        Email: this.state.EMail,
-        Asunto: this.state.Asunto,
-        // Fecha: this.state.date.toDateString("dd/MM/yyyy"),
-        Fecha: this.state.date,
-        Hora: this.state.hora,
-        Confirmado: false
-      });
-      this.props.handleCompleteClick(this.state.EMail);
-    }
-    // this.props.handleCompleteClick("unmail");
-    //
+    this.Validation().then(valid => {
+      if (valid) {
+        var firestore = firebase.firestore();
+        const docRef = firestore.collection("Turnos");
+        var Cliente = this.state.Nombre;
+        var Email = this.state.EMail;
+        var Asunto = this.state.Asunto;
+        var Fecha = this.state.date;
+        var Hora = this.state.hora;
+
+        docRef
+          .add({
+            Cliente,
+            Email,
+            Asunto,
+            Fecha,
+            Hora,
+            Confirmado: false
+          })
+          .then(function(docRef) {
+            console.log("Document written with ID: ", docRef);
+
+            const url = "http://localhost:3000/#/confirmacion/" + docRef.id;
+
+            var calendarOpc = {
+              weekday: "long",
+              year: "numeric",
+              month: "long",
+              day: "numeric"
+            };
+
+            var templateParams = {
+              name: Cliente,
+              email: Email,
+              asunto: Asunto,
+              fecha: Fecha.toLocaleDateString("es-ES", calendarOpc),
+              hora: Hora,
+              url: url
+            };
+
+            emailjs
+              .send(
+                "default_service",
+                "template_gIa4iGRD",
+                templateParams,
+                "user_vEX7TEmw5tmqeMAcHeQ5c"
+              )
+              .then(
+                function(response) {
+                  console.log("SUCCESS!", response.status, response.text);
+                },
+                function(err) {
+                  console.log("FAILED...", err);
+                }
+              );
+          });
+        this.props.handleCompleteClick(this.state.EMail);
+      }
+    });
+
     console.log(this.state.Nombre);
-    console.log(this.state.EMail);
-    console.log(this.state.Asunto);
-    console.log(this.state.date.toDateString("dd/MM/yyyy"));
-    console.log(this.state.hora);
   };
+
+  sendEmail = docId => {
+    const url = "http://localhost:3000/#/confirmacion/" + docId;
+
+    var templateParams = {
+      name: this.state.Nombre,
+      email: this.state.EMail,
+      asunto: this.state.Asunto,
+      fecha: this.state.date.toDateString("dd/MM/yyyy"),
+      hora: this.state.hora,
+      url: url
+    };
+
+    emailjs
+      .send(
+        "default_service",
+        "template_gIa4iGRD",
+        templateParams,
+        "user_vEX7TEmw5tmqeMAcHeQ5c"
+      )
+      .then(
+        function(response) {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        function(err) {
+          console.log("FAILED...", err);
+        }
+      );
+  };
+
   componentDidMount() {
     this.onChange(this.state.date);
     this.minDate();
