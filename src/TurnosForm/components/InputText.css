@@ -4,7 +4,8 @@ form {
   justify-content: center;
   flex-direction: column;
 }
-input {
+input,
+select {
   padding: 0.7em;
   margin: 0 15px 15px 15px;
 }

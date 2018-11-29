@@ -1,0 +1,35 @@
+.Admin-Page {
+  margin: 0px;
+}
+.Admin-Page h3 {
+  font-size: 2em;
+  margin: 0px;
+  padding: 20px 0;
+}
+.Admin-Page button {
+  border-radius: var(--border-radius);
+  border: solid 3px rgb(160, 160, 160);
+  padding: 10px;
+  background-color: rgb(228, 228, 228);
+  font-size: 1.3em;
+  color: rgb(53, 53, 53);
+  cursor: pointer;
+}
+.Admin-Page button:hover {
+  background-color: rgb(238, 238, 238);
+  color: rgb(89, 110, 200);
+}
+.adm-btn {
+  margin: 20px;
+  border-radius: var(--border-radius);
+  border: none;
+  padding: 10px;
+  background-color: rgb(228, 228, 228);
+  font-size: 1.3em;
+  color: rgb(53, 53, 53);
+  cursor: pointer;
+}
+.adm-btn:hover {
+  background-color: rgb(238, 238, 238);
+  color: rgb(89, 110, 200);
+}

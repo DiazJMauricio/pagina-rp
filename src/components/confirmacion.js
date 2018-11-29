@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import * as emailjs from "emailjs-com";
 
 import * as firebase from "firebase";
+import "./confirmacion.css";
+import logo from "../img/logoHC.png";
 
 class Confirmacion extends Component {
   state = {
-    mensaje: "Procesando..."
+    mensaje: "Accion en Proceso..."
   };
 
   ActualizacionConf = bol => {
@@ -101,13 +103,15 @@ class Confirmacion extends Component {
   render() {
     return (
       <div>
-        <div className="conf-container">
+        <div className="conf-container col-0">
           <div className="conf-content">
             <div className="content-logo">
-              <img src="" alt="Logo" />
+              <img src={logo} alt="Logo" />
             </div>
             <h2>{this.state.mensaje}</h2>
-            <button onClick={this.cancelTurno}>Cancelar Turno</button>
+            <button onClick={this.cancelTurno} className="btn">
+              Cancelar Turno
+            </button>
             <p>
               Para volver a Confirmar el turno solo tiene que volver a entrar al
               link o refrescar esta pagina

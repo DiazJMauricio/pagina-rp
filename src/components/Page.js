@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Home from "../Home/containers/home";
-import NavBar from "./NavBar";
 import Servicios from "../Servicios/containers/Servicios";
 import Contacto from "../Contacto/containers/Contacto";
 import Footer from "../Footer/containers/Footer";
@@ -11,9 +10,6 @@ import ContainerModal from "../Modal/containers/containerModal";
 import TurnosForm from "../TurnosForm/container/TurnosForm";
 
 class Page extends Component {
-  constructor() {
-    super();
-  }
   state = {
     NavBarClass: "NavBar-container",
     modalFormVisible: false,

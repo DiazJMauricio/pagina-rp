@@ -1,0 +1,62 @@
+.TurnoLabel {
+  margin: 10px 0;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: row;
+  background-color: var(--box-shadow);
+  border-radius: var(--border-radius);
+}
+
+.TurnoLabel .section-inf {
+  margin: 5px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(202, 202, 202);
+  border-radius: var(--border-radius);
+}
+
+.TurnoLabel .section-inf .inf {
+  display: flex;
+  align-items: stretch;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 1.1em;
+}
+.TurnoLabel .section-inf .inf div {
+  margin: 5px;
+  padding: 8px;
+  flex: 1;
+  background-color: rgb(236, 236, 236);
+  border-radius: var(--border-radius);
+}
+
+.TurnoLabel .section-btns {
+  width: 60px;
+  margin: 5px;
+  background-color: rgb(202, 202, 202);
+  border-radius: var(--border-radius);
+}
+.TurnoLabel .section-btns div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-content: stretch;
+  align-items: stretch;
+  flex-direction: column;
+}
+.TurnoLabel .section-btns button {
+  border: none;
+  flex: 1;
+  margin: 2px;
+  font-size: 1.3em;
+  color: rgb(80, 80, 80);
+  border-radius: var(--border-radius);
+  transition: all 0.3s;
+}
+.TurnoLabel .section-btns button:hover {
+  background-color: rgb(238, 238, 238);
+  color: rgb(89, 110, 200);
+}

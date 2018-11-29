@@ -97,10 +97,16 @@ class TurnosForm extends PureComponent {
         errores.push("Por favor seleccione una Hora Válida");
         this.setState({ horaValid: false });
       }
+      this.setState({
+        ErrorForm: errores
+      });
 
       // Email
       if (this.state.EMailValid === null || this.state.EMail.length === 0) {
         errores.push("Ingrese una dirección de Email Válida.");
+        this.setState({
+          ErrorForm: errores
+        });
       } else {
         //////Email Usado
         var firestore = firebase.firestore();
@@ -112,9 +118,7 @@ class TurnosForm extends PureComponent {
           .get()
           .then(query => {
             query.forEach(doc => {
-              console.log(doc.data().Fecha);
               let d = new Date(doc.data().Fecha);
-              console.log(d);
               if (d > this.state.today) {
                 mailUsado = true;
               }
@@ -160,7 +164,9 @@ class TurnosForm extends PureComponent {
           .then(function(docRef) {
             console.log("Document written with ID: ", docRef);
 
-            const url = "http://localhost:3000/#/confirmacion/" + docRef.id;
+            const url =
+              "https://diazjmauricio.github.io/pagina-rp/#/confirmacion/" +
+              docRef.id;
 
             var calendarOpc = {
               weekday: "long",
@@ -197,12 +203,10 @@ class TurnosForm extends PureComponent {
         this.props.handleCompleteClick(this.state.EMail);
       }
     });
-
-    console.log(this.state.Nombre);
   };
 
   sendEmail = docId => {
-    const url = "http://localhost:3000/#/confirmacion/" + docId;
+    const url = "https://diazjmauricio.github.io/pagina-rp/#/" + docId;
 
     var templateParams = {
       name: this.state.Nombre,

@@ -16,14 +16,14 @@ const baners = [
     key: 1,
     title: "Rectificamos Motores Diesel y Nafteros",
     text:
-      " Con solo presionar un botón en el espejo retrovisor o en la aplicación, nuestra tecnología ofrece más seguridad y practicidad para tu día a día. Aprovechá esta nueva experiencia a bordo de tu Chevrolet.",
+      "Las piezas del motor, con el uso se desgastan y pierden su forma original a causa del rozamiento que se produce entre ellas; esto provoca  pérdida de potencia en el motor, exceso de temperatura, humo, etc. Para recuperar el funcionamiento normal del motor se debe rectificar; la rectificación es una técnica por el cual se mecanizan las piezas hasta hacer iguales las superficies de contacto lo que mejora la lubricación evitando la fricción.",
     img: rectifiImg
   },
   {
     key: 2,
     title: "Pruebas Hidraulicas",
     text:
-      "Con solo presionar un botón en el espejo retrovisor o en la aplicación, nuestra tecnología ofrece más seguridad y practicidad para tu día a día. Aprovechá esta nueva experiencia a bordo de tu Chevrolet.",
+      "Confirmar la integridad estructural y hermeticidad de los equipos y sistemas de tuberías que manejan hidrocarburos líquidos y gaseosos, y sustancias peligrosas, en instalaciones terrestres e instalaciones marinas incluyendo sus servicios auxiliares, con la finalidad de garantizar la confiabilidad de la instalación durante su operación normal.",
     img: pruebasHImg
   }
 ];
@@ -36,12 +36,12 @@ const marcas = [
   },
   {
     key: 2,
-    text: "",
+    text: "Pistones Persan",
     img: imgR2
   },
   {
     key: 3,
-    text: "",
+    text: "valvulas 3B",
     img: imgR3
   }
 ];

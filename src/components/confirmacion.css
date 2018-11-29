@@ -1,0 +1,28 @@
+.conf-container {
+  background-color: #ffffff;
+}
+.conf-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
+  text-align: center;
+  padding: 3em 0;
+}
+.conf-content .content-logo {
+  width: 100%;
+  text-align: center;
+}
+.conf-content .content-logo img {
+  width: calc(50% - 20px);
+  margin: 10px;
+  height: auto;
+}
+
+@media only screen and (max-width: 512px) {
+  .conf-content .content-logo img {
+    width: calc(100% - 20px);
+    height: auto;
+  }
+}

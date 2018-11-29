@@ -4,7 +4,7 @@ import CartelHome from "../components/CartelHome";
 import MarcoLogo from "../components/MarcoLogo";
 
 const info =
-  "Con solo presionar un botón en el espejo retrovisor o en la aplicación, nuestra tecnología ofrece más seguridad y practicidad para tu día a día. Aprovechá esta nueva experiencia a bordo de tu Chevrolet.";
+  "Somos una empresa familiar localizada en la capital de San Luis que busca brindarte el mejor servicio para tu motor. Contacta con nosotros para cualquier consulta.";
 
 const links = [
   {

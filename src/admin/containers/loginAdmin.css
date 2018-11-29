@@ -1,0 +1,21 @@
+.log-btn {
+  margin: 20px;
+  border-radius: var(--border-radius);
+  border: none;
+  padding: 10px;
+  background-color: rgb(228, 228, 228);
+  font-size: 1.3em;
+  color: rgb(53, 53, 53);
+  cursor: pointer;
+}
+.log-btn:hover {
+  background-color: rgb(238, 238, 238);
+  color: rgb(89, 110, 200);
+}
+.login-container {
+  padding-top: 20px;
+  margin-top: 20px;
+  background-color: #fff;
+  max-width: 300px;
+  border-radius: var(--border-radius);
+}
